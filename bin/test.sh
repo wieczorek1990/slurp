@@ -1,7 +1,15 @@
 #!/bin/sh
+# Tests.
 
-make ARGS=sh run
-make ARGS=py run
-make ARGS=swift run
+mak() {
+  make "$@"
+  echo
+}
 
-make ARGS= run
+mak run
+mak ARGS= run
+mak ARGS="tests/" run
+
+mak ARGS="sh tests/" run
+mak ARGS="py tests/" run
+mak ARGS="swift tests/" run
